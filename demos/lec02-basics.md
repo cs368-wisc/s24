@@ -68,7 +68,7 @@ int main() {
 }
 ```
 
-Your goal: determine whether the $$leftmost$$ bits in $$both$$ `b1` and `b2` is 1 (hint: they both are, so your output should reflect that).
+Your goal: determine whether the **leftmost** bits in **both** `b1` and `b2` is 1 (hint: they both are, so your output should reflect that).
 
 Bonus: write an if/else to print yes or no (instead of 1 or 0).
 
