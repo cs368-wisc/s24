@@ -23,7 +23,7 @@ If `t` is a Sparrow table, here are some examples of things you'll be able to do
 Although this is all part of one big project, there will be six stages, P1-P6:
 
 * [P1: tooling and basics](p1.md)
-* P2
+* [P2: structs and pointers](p2.md)
 * P3
 * P4
 * P5
