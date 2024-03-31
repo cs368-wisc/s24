@@ -17,7 +17,8 @@ def run_and_check(cmd):
         raise Exception(f"This program exited with status code {result.returncode}: {cmd}")
 
 def cpp_test(name):
-    run_and_check(f"g++-13 -g -L . -I . -std=c++20 {name}.cpp -lsparrow -o {name}")
+    compiler = os.environ.get("CC", "g++-13")
+    run_and_check(f"{compiler} -L . -I . -std=c++20 {name}.cpp -lsparrow -o {name}")
     run_and_check(f"./{name}")
     return None
 
@@ -53,10 +54,31 @@ def test5_p1_program():
         return f"p1 is supposed to compute and print 5, but it printed {output}."
     return None
 
+def test6_struct():
+    return cpp_test("test6_struct")
+
+def test7_dropzero():
+    return cpp_test("test7_dropzero")
+
+def test8_average():
+    return cpp_test("test8_average")
+
+def test9_divide():
+    return cpp_test("test9_divide")
+    
+def test10_p2_program():
+    remove_if_exists("p2")
+    run_and_check("make p2")
+    assert exists("p2")
+
+    output = str(check_output("./p2"), "utf-8")
+    output = output.strip().split("\n")
+    if output[-1] != "2.5":
+        return f"p2 is supposed to compute and print 2.5 (as the last line), but it printed {output[-1]}."
+    return None
+
 def linter():
     for name in ["sparrow.h", "sparrow.cpp"]:
-        if not os.path.exists(name):
-            continue
         with open(name) as f:
             code = f.read()
             if "printf" in code:
@@ -79,7 +101,8 @@ def main():
     # step 3: run tests, and compute how many points they should get
     print("Running tests...")
     tests = [
-        test1_build, test2_bitcounter, test3_overload, test4_bit_and, test5_p1_program
+        test1_build, test2_bitcounter, test3_overload, test4_bit_and, test5_p1_program,
+        test6_struct, test7_dropzero, test8_average, test9_divide, test10_p2_program
     ]
 
     points = {}
