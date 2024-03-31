@@ -18,6 +18,11 @@ If `t` is a Sparrow table, here are some examples of things you'll be able to do
 * `t[t["c"] > 3]` to get a smaller table only containing rows where the condition applies
 * have a way to represent missing integers in a column (this is a useful feature because int primitives don't have something equivalent to `NaN` for floats)
 
+## Corrections/updates
+
+* Mar 30: add submission details
+* Mar 30: updated tests so that you can specify a `CC` environment variable to specify a different compiler
+
 ## Stages
 
 Although this is all part of one big project, there will be six stages, P1-P6:
@@ -48,3 +53,27 @@ The `tester.py` program will run until it encounters a first test
 failure.  If you want it to keep trying to run all the tests, you can
 pass `python3 tester.py -a` ("a" for "all").  Upon completion,
 test.json will summarize points earned (each test is worth 4 points).
+
+## Submission
+
+You'll use one GitHub classroom repo for all your work this semester,
+and the most recent commit won't necessarily be the best one.  For
+example, maybe you're pushing some progress on P2 that accidentally
+breaks P1 tests.
+
+Thus, in order to make a submission, fill this form whenever you have
+a commit number that is ready for grading:
+
+https://forms.gle/4in7E9jepmFwpzQs9
+
+Be sure to submit each stage by the corresponding deadline on the
+schedule: https://tyler.caraza-harter.com/cs368/s24/schedule.html.
+
+If you fall behind, it is OK to do P1 work when making a P2
+submission.  For each submission, I'll give credit for passing up to 5
+tests that you haven't passed during a previous stage.
+
+You should run the tests before submission yourself and indicate what
+you observed.  This is so that I might have a chance to notice
+something strange is going on if you report that the tests mostly
+worked for you but I'm getting a zero in my environment.
