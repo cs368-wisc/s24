@@ -11,7 +11,12 @@ using std::vector;
 using std::ostream;
 
 // print NullableInts                                                                    
-std::ostream& operator<<(std::ostream &os, const sparrow::NullableInts &obj) {
+std::ostream& operator<<(std::ostream &os, sparrow::NullableInts &obj) {
+  if (obj.nums.size() > obj.valid.size() * 32) {
+    cout << "INVALID NullableInts!\n";
+    return os;
+  }
+
   std::cout << "NullableInts: [";
   for (int i=0; i<obj.nums.size(); i++) {
     if (obj.valid[i/32][i%32]) {
@@ -27,7 +32,7 @@ std::ostream& operator<<(std::ostream &os, const sparrow::NullableInts &obj) {
   return os;
 }
 
-void Check(const sparrow::NullableInts nints, const sparrow::NullableInts expected) {
+void Check(sparrow::NullableInts nints, sparrow::NullableInts expected) {
   bool valid = true;
 
   // check that numbers match
@@ -59,9 +64,9 @@ void Check(const sparrow::NullableInts nints, const sparrow::NullableInts expect
 }
 
 void Check(std::string name,
-           const sparrow::NullableInts nints1,
-           const sparrow::NullableInts nints2,
-           const sparrow::DivideResult expected) {
+           sparrow::NullableInts nints1,
+           sparrow::NullableInts nints2,
+           sparrow::DivideResult expected) {
   bool valid = true;
 
   cout << name << ": calling Divide on these:\n" << nints1 << nints2;
