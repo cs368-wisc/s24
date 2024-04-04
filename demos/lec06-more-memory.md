@@ -138,7 +138,7 @@ numbers:
 
 ### Watch
 
-https://mediaspace.wisc.edu/media/CS%20368%20S24%20-%20Strings/1_0eek9ydl
+https://mediaspace.wisc.edu/media/t/1_a9yuzqyk
 
 ### Practice
 
@@ -175,3 +175,9 @@ hello
 2
 3
 ```
+
+## const vs. constexpr
+
+### Watch
+
+https://mediaspace.wisc.edu/media/t/1_jlh5t9td
