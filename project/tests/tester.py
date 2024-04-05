@@ -77,6 +77,41 @@ def test10_p2_program():
         return f"p2 is supposed to compute and print 2.5 (as the last line), but it printed {output[-1]}."
     return None
 
+def test11_ref():
+    return cpp_test("test11_ref")
+
+def test12_const():
+    return cpp_test("test12_const")
+
+def test13_parse():
+    return cpp_test("test13_parse")
+
+def test14_dblptr():
+    return cpp_test("test14_dblptr")
+
+def test15_p3_program():
+    remove_if_exists("p3")
+    run_and_check("make p3")
+    assert exists("p3")
+
+    expectations = [
+        (["2", "3"], "2.5"),
+        (["2", "null", "3"], "2.5"),
+        (["null", "null"], "failed"),
+        ([], "failed"),
+        (["-5", "-9", "2", "4", "null"], "-2"),
+    ]
+
+    for args, expected in expectations:
+        cmd = ["./p3"] + args
+        cmdstr = ' '.join(cmd)
+        print("RUN:", cmdstr)
+        output = str(check_output(cmd), "utf-8")
+        output = output.strip().split("\n")
+        if output[-1] != expected:
+            return f"Command [{cmdstr}] is supposed to compute and print {expected} (as the last line), but it printed {output[-1]}."
+    return None
+
 def linter():
     for name in ["sparrow.h", "sparrow.cpp"]:
         with open(name) as f:
@@ -102,7 +137,8 @@ def main():
     print("Running tests...")
     tests = [
         test1_build, test2_bitcounter, test3_overload, test4_bit_and, test5_p1_program,
-        test6_struct, test7_dropzero, test8_average, test9_divide, test10_p2_program
+        test6_struct, test7_dropzero, test8_average, test9_divide, test10_p2_program,
+        test11_ref, test12_const, test13_parse, test14_dblptr, test15_p3_program
     ]
 
     points = {}
