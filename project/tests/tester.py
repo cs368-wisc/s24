@@ -90,6 +90,22 @@ def test14_dblptr():
     return cpp_test("test14_dblptr")
 
 def test15_p3_program():
+    with open("p3.cpp") as f:
+        code = f.read()
+        calls = [line for line in code.split(";") if "StrsToNullableInts" in line]
+    names = []
+    for call in calls:
+        parts = [p.strip() for p in call.split("//")[0].split("=")]
+        names.append(parts[0].split(" ")[-1].strip())
+
+    for name in names:
+        target = f"delete {name}"
+        if not target in code:
+            return (f"Does {name} refer to heap memory?  Tester cannot find " +
+                    f"{repr(target)} in your code.  This is *probably* a bug.  " +
+                    "Either way, restructure your code so the tester can more easily " +
+                    "check for probable leaks.")
+
     remove_if_exists("p3")
     run_and_check("make p3")
     assert exists("p3")
