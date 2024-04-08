@@ -96,7 +96,7 @@ def test15_p3_program():
     names = []
     for call in calls:
         parts = [p.strip() for p in call.split("//")[0].split("=")]
-        names.append(parts[0].split(" ")[-1].strip())
+        names.append(parts[0].split(" ")[-1].replace("*", "").strip())
 
     for name in names:
         target = f"delete {name}"
