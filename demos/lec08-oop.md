@@ -81,6 +81,8 @@ https://mediaspace.wisc.edu/media/t/1_cuuq6dex
 
 ## Copy Assignment Operators
 
+### Watch
+
 https://mediaspace.wisc.edu/media/t/1_ykeqa0lr
 
 
