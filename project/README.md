@@ -30,7 +30,7 @@ Although this is all part of one big project, there will be six stages, P1-P6:
 * [P1: tooling and basics](p1.md)
 * [P2: structs and pointers](p2.md)
 * [P3: references and conversions](p3.md)
-* P4
+* [P4: object oriented programming](p4.md)
 * P5
 * P6
 
