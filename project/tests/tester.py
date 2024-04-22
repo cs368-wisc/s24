@@ -175,6 +175,21 @@ def test20_p4_program():
 
     return None
 
+def test21_destructor():
+    return cpp_test("test21_destructor")
+
+def test22_cp_constructor():
+    return cpp_test("test22_cp_constructor")
+
+def test23_cp_assignment():
+    return cpp_test("test23_cp_assignment")
+
+def test24_mv_constructor():
+    return cpp_test("test24_mv_constructor")
+
+def test25_mv_assignment():
+    return cpp_test("test25_mv_assignment")
+
 def linter():
     for name in ["sparrow.h", "sparrow.cpp"]:
         with open(name) as f:
@@ -202,7 +217,9 @@ def main():
         test1_build, test2_bitcounter, test3_overload, test4_bit_and, test5_p1_program,
         test6_struct, test7_dropzero, test8_average, test9_divide, test10_p2_program,
         test11_ref, test12_const, test13_parse, test14_dblptr, test15_p3_program,
-        test16_constructor, test17_cout, test18_methods, test19_indexing, test20_p4_program
+        test16_constructor, test17_cout, test18_methods, test19_indexing, test20_p4_program,
+        test21_destructor, test22_cp_constructor, test23_cp_assignment,
+        test24_mv_constructor, test25_mv_assignment
     ]
 
     points = {}
