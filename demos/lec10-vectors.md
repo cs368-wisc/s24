@@ -11,8 +11,8 @@ https://mediaspace.wisc.edu/media/CS%20368%20S24%20-%20Vectors/1_6xfrtnqf
 
 ### Watch
 
-https://mediaspace.wisc.edu/media/CS%20368%20S24%20-%20Moving%20Data/1_08c8keim
-
+* Part 1: https://mediaspace.wisc.edu/media/CS%20368%20S24%20-%20Moving%20Data/1_08c8keim
+* Part 2: https://mediaspace.wisc.edu/media/t/1_uloya8oi
 
 ## Creating a Movable Class with Copilot
 
