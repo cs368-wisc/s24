@@ -190,6 +190,21 @@ def test24_mv_constructor():
 def test25_mv_assignment():
     return cpp_test("test25_mv_assignment")
 
+def test26_add_col():
+    return cpp_test("test26_add_col")
+
+def test27_get_col():
+    return cpp_test("test27_get_col")
+
+def test28_output():
+    return cpp_test("test28_output")
+
+def test29_files():
+    return cpp_test("test29_files")
+
+def test30_division():
+    return cpp_test("test30_division")
+
 def linter():
     for name in ["sparrow.h", "sparrow.cpp"]:
         with open(name) as f:
@@ -219,7 +234,8 @@ def main():
         test11_ref, test12_const, test13_parse, test14_dblptr, test15_p3_program,
         test16_constructor, test17_cout, test18_methods, test19_indexing, test20_p4_program,
         test21_destructor, test22_cp_constructor, test23_cp_assignment,
-        test24_mv_constructor, test25_mv_assignment
+        test24_mv_constructor, test25_mv_assignment,
+        test26_add_col, test27_get_col, test28_output, test29_files, test30_division
     ]
 
     points = {}
